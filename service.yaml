@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["172.31.24.247"],"port":31791,"protocol":"TCP","serviceName":"default:a2-cluster-deployment-nodeport","allNodes":true}]
+    field.cattle.io/targetWorkloadIds: '["default/a2-cluster-deployment"]'
+    management.cattle.io/ui-managed: 'true'
+  creationTimestamp: '2026-09-29T05:38:16Z'
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:field.cattle.io/publicEndpoints: {}
+            f:field.cattle.io/targetWorkloadIds: {}
+            f:management.cattle.io/ui-managed: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c2774968-30c9-4853-a09b-6178830e475f"}: {}
+        f:spec:
+          f:externalTrafficPolicy: {}
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":8080,"protocol":"TCP"}:
+              .: {}
+              f:name: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: agent
+      operation: Update
+      time: '2026-09-29T06:46:36Z'
+  name: a2-cluster-deployment-nodeport
+  namespace: default
+  ownerReferences:
+    - apiVersion: apps/v1
+      controller: true
+      kind: Deployment
+      name: a2-cluster-deployment
+      uid: c2774968-30c9-4853-a09b-6178830e475f
+  resourceVersion: '46607'
+  uid: 5d2f4cd2-4e31-43be-82dc-fb6df75e32e0
+spec:
+  clusterIP: 10.43.4.72
+  clusterIPs:
+    - 10.43.4.72
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: nodeport
+      nodePort: 31791
+      port: 8080
+      protocol: TCP
+      targetPort: 80
+  selector:
+    workload.user.cattle.io/workloadselector: apps.deployment-default-a2-cluster-deployment
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
