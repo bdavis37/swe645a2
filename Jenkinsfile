@@ -34,7 +34,7 @@ pipeline {
                 script {
                     sh """
                     sed -i 's|bdavis37/assignment-two:latest|${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}|' k8s/deployment.yaml
-                    kubectl apply -f k8s/deployment .yaml
+                    kubectl apply -f k8s/deployment.yaml
                     kubectl apply -f k8s/service.yaml
                     """
                 }
