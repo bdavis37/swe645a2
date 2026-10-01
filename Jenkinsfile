@@ -41,15 +41,13 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        stage('Did deployment success') {
-            post {
-                success {
-                    echo 'Deployment success'
-                }
-                failure {
-                    echo 'Deployment failed'
-                }
-            }
+    }
+    post {
+        success {
+            echo 'Deployment success'
+        }
+        failure {
+            echo 'Deployment failed'
         }
     }
 }
