@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     field.cattle.io/publicEndpoints: >-
-      [{"addresses":["172.31.24.247"],"port":31791,"protocol":"TCP","serviceName":"default:a2-cluster-deployment-nodeport","allNodes":true}]
+      [{"addresses":["52.54.25.128"],"port":31791,"protocol":"TCP","serviceName":"default:a2-cluster-deployment-nodeport","allNodes":true}]
     field.cattle.io/targetWorkloadIds: '["default/a2-cluster-deployment"]'
     management.cattle.io/ui-managed: 'true'
   creationTimestamp: '2026-09-29T05:38:16Z'

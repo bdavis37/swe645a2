@@ -4,7 +4,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: '1'
     field.cattle.io/publicEndpoints: >-
-      [{"addresses":["172.31.24.247"],"port":31791,"protocol":"TCP","serviceName":"default:a2-cluster-deployment-nodeport","allNodes":true}]
+      [{"addresses":["52.54.25.128"],"port":31791,"protocol":"TCP","serviceName":"default:a2-cluster-deployment-nodeport","allNodes":true}]
   creationTimestamp: '2026-09-29T05:38:16Z'
   generation: 2
   labels:
