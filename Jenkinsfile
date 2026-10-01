@@ -8,11 +8,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps{
-                git 'https://github.com/bdavis37/swe645a2.git'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
