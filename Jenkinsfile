@@ -25,15 +25,15 @@ pipeline {
             }
         }
         stage('Update Kubernetes Deployment') {
-        steps {
-            sh '''
-                kubectl set image deployment/a2-cluster-deployment \
-                    container-0=bdavis37/assignment-two:latest
-                kubectl rollout restart deployment/a2-cluster-deployment
-                kubectl rollout status deployment/a2-cluster-deployment --timeout=120s
-            '''
+            steps {
+                sh '''
+                    kubectl set image deployment/a2-cluster-deployment \
+                        container-0=bdavis37/assignment-two:latest
+                    kubectl rollout restart deployment/a2-cluster-deployment
+                    kubectl rollout status deployment/a2-cluster-deployment --timeout=120s
+                '''
+            }
         }
-}
     }
     post {
         success {
