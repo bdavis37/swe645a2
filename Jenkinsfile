@@ -25,16 +25,15 @@ pipeline {
             }
         }
         stage('Update Kubernetes Deployment') {
-            steps {
-                script {
-                    sh """
-                    sed -i 's|bdavis37/assignment-two:1.0|${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}|' k8s/deployment.yaml
-                    kubectl apply -f k8s/deployment.yaml
-                    kubectl apply -f k8s/service.yaml
-                    """
-                }
-            }
+        steps {
+            sh '''
+                kubectl set image deployment/a2-cluster-deployment \
+                    container-0=bdavis37/assignment-two:latest
+                kubectl rollout restart deployment/a2-cluster-deployment
+                kubectl rollout status deployment/a2-cluster-deployment --timeout=120s
+            '''
         }
+}
     }
     post {
         success {
