@@ -1,3 +1,5 @@
+// Name: Bryce Davis
+// CI/CD for building and deploying the assignment 2 web application.
 pipeline {
     agent any
 

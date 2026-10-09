@@ -1,3 +1,5 @@
+# Bryce Davis
+# Deployment yaml file that defines my application for k8s.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
